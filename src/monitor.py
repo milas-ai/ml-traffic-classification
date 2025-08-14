@@ -1,7 +1,7 @@
 from pickle import load
 from csv_preprocessor import preprocess
-from modules/pcap_processor import pcapToCSV, getFeaturesFromFile, getDefaultFeatures, pcapSample
-from modules/subprocess import Popen, DEVNULL
+from pcap_processor import pcapToCSV, getFeaturesFromFile, getDefaultFeatures, pcapSample
+from subprocess import Popen, DEVNULL
 from threading import Thread
 import time
 import sys

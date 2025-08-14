@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import sys
 from sklearn.tree import DecisionTreeClassifier
-from modules/csv_preprocessor import preprocess
+from csv_preprocessor import preprocess
 from pickle import dump
 
 def main():

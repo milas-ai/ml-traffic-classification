@@ -1,4 +1,4 @@
-from modules/csv_preprocessor import preprocess
+from csv_preprocessor import preprocess
 from pickle import load
 import sys
 
