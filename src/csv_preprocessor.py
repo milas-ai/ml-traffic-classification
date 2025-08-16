@@ -82,7 +82,7 @@ def convertFlagsToInt(flag_str):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 3:
-        print("Usage: python preprocess.py <data_path> <output_file>")
+        print("Usage: python csv_preprocessor.py <data_path> <output_file>")
         exit(1)
     
     X, y = process(sys.argv[1])
