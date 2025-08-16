@@ -222,7 +222,7 @@ def pcapToCSV(pcap_file, output_file, packet_features, classification=None):
 
 def main():
     if len(sys.argv) not in [3, 4, 6, 7]:
-        print("Usage: python processor.py <pcap_file> <output_file> [features_file] [attack category subcategory]")
+        print("Usage: python pcap_processor.py <pcap_file> <output_file> [features_file] [attack category subcategory]")
         exit(1)
 
     pcap_file = sys.argv[1]
