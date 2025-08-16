@@ -37,7 +37,11 @@ class PacketCapturer:
         self.stopCapture()
 
 def log(message):
-    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {message}")
+    log_message = f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {message}"
+    with open("monitor.log", "a") as log_file:
+        log_file.write(log_message)
+        log_file.write("\n")
+    print(log_message)
 
 def main():
     if len(sys.argv) not in [2,3]:
@@ -60,14 +64,14 @@ def main():
             capturer.timer(CAPTURE_TIME)
 
             # Convert the captured packets to CSV to be used for training
-            package_count = pcapSample("capture.pcapng", SAMPLE_SIZE)
+            packet_count = pcapSample("capture.pcapng", SAMPLE_SIZE)
             log(f"Total packets captured: {packet_count}")
             pcapToCSV("capture.pcapng", "capture.csv", packet_features)
             X, y = preprocess("capture.csv")
 
             # Traffic classification
             y_pred = model.predict(X)
-            log(f"{y_pred.sum()/len(y_pred) * 100:.2f}% of the packets are classified as malicious.")
+            log(f"{y_pred.sum()/len(y_pred) * 100:.2f}% of the packets are classified as malicious")
 
             # Clean up
             if os.path.exists("capture.pcapng"):
@@ -78,7 +82,7 @@ def main():
     except KeyboardInterrupt:
         print("", end="\r")
         capturer.stopCapture()
-        log("Monitoring stopped by user.")
+        log("Monitoring stopped by user")
         if os.path.exists("capture.pcapng"):
             os.remove("capture.pcapng")
         if os.path.exists("capture.csv"):
