@@ -8,7 +8,7 @@ import sys
 import os
 
 CAPTURE_TIME = 30
-SAMPLE_SIZE = 10000
+SAMPLE_SIZE = 1000 # Maximum tested sample size is 5000 packets
 
 class PacketCapturer:
     def __init__(self):
