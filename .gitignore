@@ -1,4 +1,9 @@
+data/
 **/*.pcapng
 **/*.pcap
-**/*.pkl
 **/*.csv
+
+src/models/
+**/*.pkl
+
+tests/
