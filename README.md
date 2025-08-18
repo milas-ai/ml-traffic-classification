@@ -32,7 +32,7 @@ O modelo utilizado deve ser um objeto exportado pelo pickle (`.plk`) com uma fun
 
 Um exemplo simples de modelo pode ser treinado utilizando os programas [`trainer.py`](#treinador) e [`tester.py`](#testes-de-classificação).
 
-### Captura de pacotes
+### :camera: Captura de pacotes
 
 A captura do fluxo de rede é feita utilizando a ferramenta `tshark`, parte do pacote do analisador de protocolos de rede [wireshark](https://www.wireshark.org/).
 
@@ -40,7 +40,7 @@ O tempo de captura pode ser modificado pela constante `CAPTURE_TIME`, em segundo
 
 Caso o número de pacotes exceda a quantia especificada pela constante `SAMPLE_SIZE`, uma amostra desse mesmo tamanho será utilizada para a classificação, ao invés da captura completa (o tamanho máximo de `SAMPLE_SIZE` testado foi 5000, acima disso o filtro do tshark para amostragem pode falhar).
 
-### Log de monitoramento
+### :open_book: Log de monitoramento
 
 Um arquivo de log (`monitor.log`) é gerado conforme as mensagens são mostradas no console, indicando o início e fim das capturas, o total de pacotes capturados em cada medição e a porcentagem de pacotes classificados como ataque.
 
@@ -56,7 +56,7 @@ Os dados de treino podem ser tanto um único arquivo CSV quanto um diretório co
 
 Utilizando a biblioteca `sklearn`, o programa treina uma árvore de decisão cujos parâmetros podem ser ajustados conforme necessário.
 
-### Como treinar um modelo?
+### :wrench: Como treinar um modelo?
 
 1. Utilize o programa tshark para iniciar uma captura de pacotes e salve a saída em um arquivo PCAP:
 
@@ -102,13 +102,13 @@ python pcap_processor.py <pcap_file> <output_file> [features_file] [attack categ
 
 *Os parâmetros de ataque e subcategoria de ataque podem ser especificados para rotular os dados da captura, caso deseje utilizar a saída para treinar um modelo.
 
-### Features padrão
+### :page_facing_up: Features padrão
 
 São as features que podem ser extraídas das capturas do tshark pelo programa, sendo elas: `pkSeqID`, `stime`, `flgs`,  `proto`,  `saddr`,  `sport`,  `daddr`,  `dport`,  `pkts`,  `bytes`,  `ltime`,  `seq`,  `dur`,  `mean`,  `stddev`,  `sum`, `min`,  `max`,  `spkts`,  `dpkts`,  `sbytes`,  `dbytes`,  `rate`,  `srate`, `drate`.
 
 Elas são sempre processadas para cada medição, porém podem ser ocultas do dataframe classificado através de um [arquivo de features personalizadas](#features-personalizadas).
 
-### Features personalizadas
+### :memo: Features personalizadas
 
 Um arquivo de features pode ser construído em formato de um CSV sem header, com cada linha contêndo quatro informações na seguinte ordem: `key` (feature), `value` (valor padrão), `name` (nome no cabeçalho do arquivo de saída), `locked` (booleana que indica se ela está fixada).
 
