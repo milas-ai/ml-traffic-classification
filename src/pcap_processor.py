@@ -202,7 +202,10 @@ def pcapSample(pcap_file, sample_size=1000):
     aux_process = Popen(["capinfos", "-Trc", pcap_file], stdout=PIPE, stderr=DEVNULL)
     aux_process.wait()
     packet_count, _ = aux_process.communicate()
-    packet_count = int(packet_count.decode().strip().split("\t")[-1].split(" ")[-1])
+    try:
+        packet_count = int(packet_count.decode().strip().split("\t")[-1].split(" ")[-1])
+    except:
+        packet_count = 0
 
     if packet_count > sample_size:
         packet_numbers = sample(range(1, packet_count + 1), sample_size)
