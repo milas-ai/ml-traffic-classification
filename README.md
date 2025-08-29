@@ -1,7 +1,9 @@
 # Monitoramento e Classificação de Tráfego de Rede
-Ferramenta de classificação de tráfego de rede com aprendizado de máquina para o projeto de iniciação científica de [análise de desempenho de técnicas de aprendizado de máquina na classificação online de tráfego malicioso](https://bv.fapesp.br/pt/bolsas/213080/analise-de-desempenho-de-tecnicas-de-aprendizado-de-maquina-na-classificacao-online-de-trafego-malic/).
+Ferramenta de classificação de tráfego de rede com aprendizado de máquina, resultado do projeto **STARLING: Segurança e Alocação de Recursos em B5G via Técnicas de Inteligência Artificial**, financiado pela FAPESP (proc.  21/06995-0).
 
-A ferramenta desenvolvida é voltada para o monitoramento de tráfego de rede, utilizando um modelo de aprendizado de máquina treinado com capturas prévias de tráfego real para poder classificar em tempo real os pacotes passando em uma rede. O tráfego é capturado e posteriormente convertido para um arquivo CSV a ser usado como entrada para o modelo de classificação. São utilizados três programas principais (`monitor`, `trainer` e `tester`), e dois módulos auxiliares (`pcap_processor` e `csv_preprocessor`).
+O desenvolvimento foi realizado também com financiamento do processo FAPESP [Análise de desempenho de técnicas de aprendizado de máquina na classificação online de tráfego malicioso](https://bv.fapesp.br/pt/bolsas/213080/analise-de-desempenho-de-tecnicas-de-aprendizado-de-maquina-na-classificacao-online-de-trafego-malic/) (proc. 23/13638-5).
+
+A ferramenta foi pensada para o monitoramento de tráfego de rede, utilizando um modelo de aprendizado de máquina treinado com capturas prévias de tráfego real para poder classificar em tempo real os pacotes passando em uma rede. O tráfego é capturado e posteriormente convertido para um arquivo CSV a ser usado como entrada para o modelo de classificação. São utilizados três programas principais (`monitor`, `trainer` e `tester`), e dois módulos auxiliares (`pcap_processor` e `csv_preprocessor`).
 
 <p align="center">
   <img src="https://imgur.com/WOvZje9.png" width="750">
