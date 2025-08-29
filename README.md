@@ -30,7 +30,7 @@ python monitor.py <model_file> [features_file]
 ```
 *O [arquivo de features](#features-personalizadas) é opcional, caso não especificado, serão utilizadas as [features padrão](#features-padrão).
 
-O modelo utilizado deve ser um objeto exportado pelo pickle (`.plk`) com uma função `predict(dataframe)` que classifica o dataframe dos pacotes capturados.
+O modelo utilizado deve ser um objeto exportado pelo pickle (`.pkl`) com uma função `predict(dataframe)` que classifica o dataframe dos pacotes capturados.
 
 Um exemplo simples de modelo pode ser treinado utilizando os programas [`trainer.py`](#treinador) e [`tester.py`](#testes-de-classificação).
 
